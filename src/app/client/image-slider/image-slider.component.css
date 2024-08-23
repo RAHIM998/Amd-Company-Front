@@ -1,0 +1,44 @@
+/* image-slider.component.css */
+
+.slider-container {
+    position: relative;
+    width: 95%;
+    height: 600px; 
+    overflow: hidden;
+    background-color: #fff; 
+    border-radius: 8px;
+  }
+  
+  .slider {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+  }
+  
+  .slider-container button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .slider-container button:first-of-type {
+    left: 10px;
+  }
+  
+  .slider-container button:last-of-type {
+    right: 10px;
+  }
+  

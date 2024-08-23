@@ -2,13 +2,28 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ClientRoutingModule } from './client-routing.module';
+import { ImageSliderComponent } from './image-slider/image-slider.component';
+import { HomeComponent } from './home/home.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ContactComponent } from './contact/contact.component';
+import { AproposComponent } from './apropos/apropos.component';
+import { LayoutModule } from './layout/layout.module';
+import { CategoryproductComponent } from './categoryproduct/categoryproduct.component';
 
 
 @NgModule({
-  declarations: [ ],
+  declarations: [ 
+    HomeComponent,
+    ImageSliderComponent,
+    ContactComponent,
+    AproposComponent,
+    CategoryproductComponent
+  ],
   imports: [
     CommonModule,
-    ClientRoutingModule
+    ClientRoutingModule,
+    LayoutModule,
+    CarouselModule
   ]
 })
 export class ClientModule { }
