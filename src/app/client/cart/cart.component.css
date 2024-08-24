@@ -1,0 +1,115 @@
+/* Conteneur principal du panier */
+.cart-container {
+    margin-top: 40px;
+    padding: 10px;
+    background-color: #adaaaa; /* Couleur de fond légère */
+    border-radius: 8px; /* Coins arrondis pour le conteneur */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  }
+  
+  /* Titre du panier */
+  h2 {
+    color: #0d0f27; 
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .vide{
+    color: #0d0f27;
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  /* Tableau des articles du panier */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  /* Entêtes du tableau */
+  thead {
+    background: linear-gradient(135deg, #000000, #1e4572);
+    color: #fff; /* Couleur du texte en blanc */
+  }
+  
+  th {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  /* Lignes du tableau */
+  tbody tr {
+    border-bottom: 1px solid #ddd; /* Ligne de séparation légère */
+  }
+  
+  td {
+    padding: 10px;
+  }
+  
+  /* Image du produit */
+  .product-image {
+    max-width: 100px; /* Limiter la taille de l'image */
+    max-height: 100px;
+    object-fit: cover;
+    border-radius: 5px; /* Coins arrondis pour l'image */
+  }
+  
+  /* Boutons pour ajuster la quantité */
+  button {
+    background-color: #007bff; /* Couleur principale du bouton */
+    color: #fff; /* Texte en blanc */
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px; /* Coins arrondis pour le bouton */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Couleur de survol du bouton */
+  }
+  
+  /* Icône pour retirer le produit */
+  .remove-icon {
+    color: #dc3545; /* Couleur pour l'icône de suppression */
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  /* Conteneur des totaux */
+  .cart-totals {
+    background-color: #fff; /* Couleur de fond pour les totaux */
+    border: 1px solid #ddd; /* Bordure légère */
+    padding: 10px;
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  }
+  
+  /* Bouton de commande */
+  .order-button {
+    background: linear-gradient(135deg, #000000, #1e4572);
+  }
+  
+  .order-button:hover {
+    background-color: #218838; /* Couleur de survol pour le bouton de commande */
+  }
+  
+  /* Bouton pour vider le panier */
+  button.clear-cart {
+    background-color: #dc3545; /* Couleur principale pour le bouton de suppression */
+  }
+  
+  button.clear-cart:hover {
+    background-color: #c82333; /* Couleur de survol pour le bouton de suppression */
+  }
+  
+  /* Message d'erreur */
+  .error-message {
+    color: #dc3545; /* Couleur pour les messages d'erreur */
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  

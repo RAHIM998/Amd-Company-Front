@@ -1,0 +1,49 @@
+<div class="cart-container">
+    <h2>Votre Panier</h2>
+  
+    <div *ngIf="items.length === 0">
+      <p class="vide">Votre panier est vide.</p>
+    </div>
+  
+    <div *ngIf="items.length > 0">
+      <table>
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Nom</th>
+            <th>Prix Unitaire</th>
+            <th>Quantité</th>
+            <th>Total</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td>
+              <img *ngIf="item.images && item.images.length > 0" [src]="'data:image/png;base64,' + item.images[0].image" alt="{{ item.libelle }}" class="product-image">
+            </td>
+            <td>{{ item.libelle }}</td>
+            <td>{{ item.prix }} FCFA</td>
+            <td>
+              <button (click)="decrementQuantity(item.id)" style="background: linear-gradient(135deg, #000000, #1e4572);">-</button>
+              <span>{{ getQuantity(item.id) }}</span>
+              <button (click)="incrementQuantity(item.id)" style="background: linear-gradient(135deg, #000000, #1e4572);">+</button>
+            </td>
+            <td>{{ getFormattedPrice(item.prix) * getQuantity(item.id) }} FCFA</td>
+            <td>
+              <span (click)="removeItem(item.id)" class="remove-icon">&#x2715;</span> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <div class="cart-totals">
+        <p>Sous-total: {{ subTotal }} FCFA</p>
+        <p>Frais de livraison: {{ shippingCost }} FCFA</p>
+        <p>Total: {{ total }} FCFA</p>
+        <button (click)="clearCart()" class="clear-cart">Vider le panier</button>
+        <button (click)="placeOrder()" class="order-button">Commander</button>
+      </div>
+    </div>
+  </div>
+  

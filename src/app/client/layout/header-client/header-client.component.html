@@ -12,7 +12,17 @@
                 <li>
                     <input type="text"  placeholder="Rechercher...">
                 </li>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>                    
+
+                <li> 
+                    <div class="cart-icon-container">
+                        <a href="#" routerLink="/panier">
+                            <i class="fas fa-shopping-cart cart-icon"></i>
+                            <span *ngIf="cartItemCount > 0" class="cart-badge">{{ cartItemCount }}</span>
+                        </a>
+                    </div> 
+                </li>
+
+
                 <li><a href="#"><i class="fas fa-user"></i> Profil</a></li>
                 <li><a href="#">Connexion</a></li>
             </ul>

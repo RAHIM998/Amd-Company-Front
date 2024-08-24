@@ -11,7 +11,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1; 
     padding: 10px 20px; 
@@ -81,5 +81,37 @@
 .main-content {
     padding: 10px;
     padding-left: 100px;
+    padding-top: 100px;
     flex-grow: 1;
+}
+
+.cart-icon-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart-icon {
+    font-size: 24px; /* Augmentez la taille de l'icône pour plus de visibilité */
+}
+
+.cart-badge {
+    position: absolute;
+    top: -10px; /* Ajuster la position pour qu'elle ne chevauche pas l'icône */
+    right: -10px; /* Ajuster la position pour qu'elle ne chevauche pas l'icône */
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px; /* Ajustez la taille du padding pour une meilleure apparence */
+    font-size: 12px; /* Taille du texte dans la badge */
+    min-width: 20px; /* Assurer une forme ronde */
+    text-align: center;
+    line-height: 20px; /* Aligner le texte verticalement */
+}
+
+.cart-label {
+    margin-top: 5px; /* Espacement entre l'icône et le label */
+    font-size: 12px; /* Taille du texte du label */
+    color: #fff; /* Couleur du texte */
 }

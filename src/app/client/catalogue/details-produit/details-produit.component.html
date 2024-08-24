@@ -1,0 +1,28 @@
+<div *ngIf="produit" class="product-details-container">
+  <div class="product-header">
+    <h1>Détails du produit</h1>
+  </div>
+
+  <div class="product-content">
+    <div class="product-image">
+      <img *ngIf="mainImage" [src]="'data:image/png;base64,' + mainImage" alt="Nom du produit" class="main-image">
+    </div>
+
+    <div class="product-info">
+      <h2 class="product-title">{{produit.libelle}}</h2>
+      <p class="product-description">{{produit.description}}</p>
+      <p class="product-price">Prix : <strong>{{produit.prix}}</strong></p>
+      <p class="product-stock">Stock disponible : <strong>{{produit.stock}}</strong></p>
+      <button class="add-to-cart-button" (click)="addToCart(produit)" [disabled]="produit.stock === 0">Ajouter au panier</button>
+    </div>
+  </div>
+
+  <div *ngIf="produit && produit.images && produit.images.length > 0" class="image-container">
+    <div *ngFor="let img of produit.images">
+      <img [src]="'data:image/png;base64,' + img.image" 
+           (click)="updateMainImage(img.image)" 
+           alt="Image produit" 
+           class="thumbnail">
+    </div>
+  </div>
+</div>

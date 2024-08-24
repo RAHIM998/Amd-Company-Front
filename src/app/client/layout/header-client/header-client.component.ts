@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from 'src/app/shared/models/Category/category';
 import { CategoryServiceService } from 'src/app/shared/services/CategoryService/category-service.service';
+import { PanierService } from 'src/app/shared/services/Panier/panier.service';
 
 @Component({
   selector: 'app-header-client',
@@ -10,11 +11,18 @@ import { CategoryServiceService } from 'src/app/shared/services/CategoryService/
 export class HeaderClientComponent implements OnInit{
   
   categories: Category[] = [];
+  cartItemCount: number = 0;
   
-  constructor(private categoryService: CategoryServiceService) { }
+  constructor(
+    private categoryService: CategoryServiceService,
+    private panierService: PanierService,
+  ) { }
   
   ngOnInit(): void {
     this.getAllCategory();
+    this.panierService.cartItemCount$.subscribe(count => {
+      this.cartItemCount = count;
+    });
   }
 
   getAllCategory(): void {

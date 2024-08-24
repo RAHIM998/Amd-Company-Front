@@ -1,0 +1,132 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .product-details-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-header {
+    background: linear-gradient(135deg, #000000, #1e4572);
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .product-header h1 {
+    margin: 0;
+  }
+  
+  .product-content {
+    display: flex;
+    padding-top: 10px;
+    gap: 20px;
+  }
+  
+  .product-image {
+    flex: 1;
+  }
+  
+  .product-image img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  
+  .product-info {
+    flex: 1;
+    margin-left: 50px;
+    align-items: center;
+  }
+  
+  .product-title {
+    color: #1e4572;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  
+  .product-description {
+    margin: 15px 0;
+    font-size: 20px;
+  }
+  
+  .product-price {
+    font-size: 1.2em;
+    color: #000;
+  }
+  
+  .product-stock {
+    font-size: 1.1em;
+    color: green;
+  }
+  
+  .product-stock.low-stock {
+    color: red;
+  }
+  
+  .add-to-cart-button {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #000000, #1e4572);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .add-to-cart-button:hover {
+    background: linear-gradient(135deg, #1e4572, #000000);
+  }
+  
+  .product-reviews {
+    margin-top: 30px;
+  }
+  
+  .product-reviews h3 {
+    color: #1e4572;
+    margin-bottom: 20px;
+  }
+  
+  .review {
+    border-top: 1px solid #ddd;
+    padding: 15px 0;
+  }
+  
+  .reviewer-name {
+    font-weight: bold;
+  }
+  
+  .review-text {
+    margin: 10px 0;
+  }
+  
+  .image-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .thumbnail:hover {
+    border-color: #007bff;
+  }
+  

@@ -9,6 +9,9 @@ import { ContactComponent } from './contact/contact.component';
 import { AproposComponent } from './apropos/apropos.component';
 import { LayoutModule } from './layout/layout.module';
 import { CategoryproductComponent } from './categoryproduct/categoryproduct.component';
+import { CatalogueComponent } from './catalogue/catalogue.component';
+import { DetailsProduitComponent } from './catalogue/details-produit/details-produit.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -17,7 +20,10 @@ import { CategoryproductComponent } from './categoryproduct/categoryproduct.comp
     ImageSliderComponent,
     ContactComponent,
     AproposComponent,
-    CategoryproductComponent
+    CategoryproductComponent,
+    CatalogueComponent,
+    DetailsProduitComponent,
+    CartComponent
   ],
   imports: [
     CommonModule,
