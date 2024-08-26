@@ -1,0 +1,23 @@
+.access-denied {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .access-denied h1 {
+    font-size: 3em;
+    color: #ff4c4c;
+  }
+  
+  .access-denied p {
+    font-size: 1.5em;
+    margin-top: 20px;
+  }
+  
+  .access-denied a {
+    margin-top: 30px;
+    display: inline-block;
+    font-size: 1.2em;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
