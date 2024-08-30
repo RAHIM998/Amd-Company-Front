@@ -1,0 +1,60 @@
+<div class="edit-profile-container">
+    <form [formGroup]="userForm" (ngSubmit)="updateUser()">
+      <div class="form-group">
+        <label for="name">Nom:</label>
+        <input
+          type="text"
+          id="name"
+          formControlName="name"
+          placeholder="Entrez votre nom"
+        />
+        <div *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched" class="error">
+            <small *ngIf="userForm.get('name')?.errors?.['required']">Nom est requis.</small>
+            <small *ngIf="userForm.get('name')?.errors?.['minlength']">Nom doit contenir au moins 2 caractères.</small>
+            <small *ngIf="userForm.get('name')?.errors?.['pattern']">Nom ne peut contenir que des lettres et des espaces.</small>
+          </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="telephone">Téléphone:</label>
+        <input
+          type="text"
+          id="telephone"
+          formControlName="telephone"
+          placeholder="Entrez votre numéro de téléphone"
+        />
+        <div *ngIf="userForm.get('telephone')?.invalid && userForm.get('telephone')?.touched" class="error">
+            <small *ngIf="userForm.get('telephone')?.errors?.['required']">Téléphone est requis.</small>
+            <small *ngIf="userForm.get('telephone')?.errors?.['pattern']">Numéro de téléphone invalide.</small>
+          </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="Entrez votre email"
+        />
+        <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched" class="error">
+            <small *ngIf="userForm.get('email')?.errors?.['required']">Email est requis.</small>
+            <small *ngIf="userForm.get('email')?.errors?.['email']">Email invalide.</small>
+            <small *ngIf="userForm.get('email')?.errors?.['emailExists']">Cet email est déjà utilisé.</small>
+          </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="image">Image:</label>
+        <input
+          type="file"
+          id="image"
+          (change)="onFileChange($event)"
+        />
+      </div>
+  
+  
+      <button type="submit"  class="submit-btn">Modifier</button>
+    </form>
+  </div>
+  
