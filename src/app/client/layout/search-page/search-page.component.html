@@ -1,0 +1,33 @@
+<div class="product-cards-container container">
+    <h1 *ngIf="searchResults.length > 0" class="title">Produits trouvés</h1>
+    <div *ngIf="searchResults.length > 0" class="products-wrapper">
+        <div *ngFor="let produit of searchResults" class="product-card">
+            <a [routerLink]="['/produit', produit.id]" class="product-link">
+                <img *ngIf="produit.images && produit.images.length > 0" 
+                     [src]="'data:image/png;base64,' + produit.images[0].image" 
+                     alt="{{ produit.libelle }}" 
+                     class="product-image">
+                <div class="product-info">
+                    <h2 class="product-title">{{ produit.libelle }}</h2>
+                    <p class="product-description">{{ produit.description }}</p>
+                    <p class="product-stock" [ngClass]="{'low-stock-price': produit.stock < 5}">
+                        <ng-container *ngIf="produit.stock > 0; else outOfStock">
+                            Stock disponible: <span>{{ produit.stock }}</span>
+                        </ng-container>
+                        <ng-template #outOfStock>
+                            <span class="out-of-stock">Solde out</span>
+                        </ng-template>
+                    </p>
+                    <p class="product-price">Prix : <span>{{ produit.prix }} FCFA</span></p>
+                </div>
+            </a>
+            <button class="order-button" (click)="ajouterProduit(produit)" [disabled]="produit.stock === 0">Ajouter au panier</button>
+        </div>
+    </div>
+    <div *ngIf="!searchResults.length && !errorMessage">
+        Aucun produit trouvé pour "{{ searchQuery }}".
+    </div>
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+</div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Category } from 'src/app/shared/models/Category/category';
+import { TokenService } from 'src/app/shared/services/AuthService/token.service';
 import { CategoryServiceService } from 'src/app/shared/services/CategoryService/category-service.service';
 import { PanierService } from 'src/app/shared/services/Panier/panier.service';
 
@@ -12,17 +14,33 @@ export class HeaderClientComponent implements OnInit{
   
   categories: Category[] = [];
   cartItemCount: number = 0;
+  displayName: string = 'Profile'; 
+  userName: string = '';
+  isConnected: boolean = false;
+  searchQuery: string = '';
+
   
   constructor(
     private categoryService: CategoryServiceService,
     private panierService: PanierService,
+    private tokenService: TokenService,
+    private router: Router
   ) { }
   
   ngOnInit(): void {
     this.getAllCategory();
+    this.checkConnectionStatus();
     this.panierService.cartItemCount$.subscribe(count => {
       this.cartItemCount = count;
     });
+  }
+
+  checkConnectionStatus() {
+    this.isConnected = this.tokenService.isConnect();
+    if (this.isConnected) {
+      const user = localStorage.getItem('name');
+      this.userName = user ? user : '';
+    }
   }
 
   getAllCategory(): void {
@@ -41,6 +59,19 @@ export class HeaderClientComponent implements OnInit{
   }
 
 
+  logout() {
+    this.tokenService.logOut();
+    this.router.navigate(['/home']).then(() => {
+      window.location.reload();
+  }); 
 
+  }
+
+
+  onSearch(): void {
+    if (this.searchQuery.trim()) {
+      this.router.navigate(['/search-results'], { queryParams: { query: this.searchQuery } });
+    }
+  }
 
 }
