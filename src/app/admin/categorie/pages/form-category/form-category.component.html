@@ -1,0 +1,22 @@
+
+
+<div class="container">
+    <h2>Ajouter un Burger</h2>
+    <form [formGroup]="CategoryForm" (ngSubmit)="addCategory()">
+      
+      <!-- Libellé -->
+      <input type="text" id="name" formControlName="libelle" class="form-control" placeholder="Nom de la Catégorie">
+      <div *ngIf="CategoryForm.get('libelle')?.invalid && (CategoryForm.get('libelle')?.dirty || CategoryForm.get('libelle')?.touched)" class="text-danger">
+        <small *ngIf="CategoryForm.get('libelle')?.errors?.['required']">Le nom est requis.</small>
+        <small *ngIf="CategoryForm.get('libelle')?.errors?.['minlength']">Le nom doit comporter au moins 2 caractères.</small>
+        <small *ngIf="CategoryForm.get('libelle')?.errors?.['maxlength']">Le nom ne peut pas dépasser 255 caractères.</small>
+      </div>
+      
+  
+      <div class="button-group">
+        <button type="submit" class="btn btn-primary" [disabled]="">Ajouter</button>
+        <button type="reset" class="btn btn-primary" [disabled]="">Annuler</button>
+      </div>
+    </form>
+  </div>
+  

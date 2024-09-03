@@ -1,0 +1,75 @@
+/* details-category.component.css */
+.burger-details {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: linear-gradient(90deg, #78909C, #90A4AE);
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.burger-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.burger-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.burger-image:hover {
+  transform: scale(1.05);
+}
+
+p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.burger-actions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #78909C, #90A4AE);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg,  #90A4AE, #78909C);
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}

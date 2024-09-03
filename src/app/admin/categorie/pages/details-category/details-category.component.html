@@ -1,0 +1,15 @@
+<!-- details-category.component.html -->
+<div class="burger-details">
+    <h1>Détails de la Catégorie</h1>
+    <div class="burger-card" *ngIf="category">
+      
+      <p><strong>ID:</strong> {{ category.id }}</p>
+      <p><strong>Nom:</strong> {{ category.libelle }}</p>
+      <!-- Ajoute d'autres détails si nécessaire -->
+      <div class="burger-actions">
+        <button class="btn btn-primary" (click)="editCategory()">Modifier</button>
+        <button class="btn btn-danger" (click)="deleteCategory()">Supprimer</button>
+      </div>
+    </div>
+  </div>
+  
