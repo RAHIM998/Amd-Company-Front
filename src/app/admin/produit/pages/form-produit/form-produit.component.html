@@ -1,0 +1,65 @@
+<!-- add-burger.component.html -->
+<div class="container">
+    <h2>Ajouter un produit</h2>
+    <form >
+      
+        <!-- Catégorie -->
+        <div class="form-group">
+            <label for="category">Catégorie</label>
+            <select id="category" formControlName="category" class="form-control">
+            <option value="">Sélectionner une catégorie</option>
+            <option value="1">Catégorie 1</option>
+            <option value="2">Catégorie 2</option>
+
+            </select>
+           
+        </div>
+
+        <!-- Libellé -->
+        <div class="form-group">
+            <label for="name">Libellé</label>
+            <input type="text" id="libelle" formControlName="libelle" class="form-control" placeholder="Nom du produit">
+            
+        </div>
+    
+        <!-- Prix -->
+        <div class="form-group">
+            <label for="price">Prix</label>
+            <input type="text" id="prix" formControlName="prix" class="form-control" placeholder="Prix du produit">
+           
+        </div>
+    
+        
+    
+        <!-- Stock -->
+        <div class="form-group">
+            <label for="stock">Stock</label>
+            <input type="number" id="stock" formControlName="stock" class="form-control" placeholder="Quantité en stock">
+            
+        </div>
+    
+        <!-- Description -->
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" formControlName="description" class="form-control" placeholder="Description du produit"></textarea>
+            
+        </div>
+    
+        <!-- Image URL -->
+        <div class="form-group">
+            <label for="image">Images du produit</label>
+            <input id="image" type="text" formControlName="image" class="form-control" placeholder="Photo">
+          
+        </div>
+    
+        <div class="mt-2">
+            <img [src]="imagePreview" alt="Image Preview" *ngIf="imagePreview" />
+        </div>
+    
+        <div class="button-group">
+            <button type="submit" class="btn" >Ajouter</button>
+            <button type="reset" class="btn" >Annuler</button>
+        </div>
+    </form>
+  </div>
+  
