@@ -1,0 +1,95 @@
+.table {
+    background-color: #78909C;
+    color: #ffffff; 
+}
+
+.table thead th {
+    background-color: #546E7A; 
+    color: #ffffff; 
+}
+
+.table tbody tr {
+    background-color: #90A4AE; 
+    color: #ffffff;
+}
+
+.table tbody tr:hover {
+    background-color: #607D8B; 
+}
+.td-actions i {
+    font-size: 8px;
+    
+}
+
+/* Réduit la taille des icônes */
+.td-actions i {
+    font-size: 16px; 
+}
+
+/* Ajuste le padding et la taille des boutons */
+.td-actions .btn {
+    padding: 4px 6px; 
+    font-size: 16px; 
+    margin-right: 5px;
+}
+
+/* Réduit encore plus le padding pour les petits boutons */
+.td-actions .btn-xs {
+    padding: 2px 4px; 
+}
+
+
+/*Button d'ajout */
+.custom-button {
+    background: linear-gradient(90deg, #78909C, #90A4AE); 
+    color: #ffffff; 
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease; 
+    border: none; 
+}
+
+.custom-button:hover {
+    background: linear-gradient(90deg, #90A4AE, #78909C); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+}
+
+.custom-button:active {
+    background: linear-gradient(90deg, #546E7A, #78909C); 
+}
+
+.custom-button:focus {
+    outline: none;
+}
+
+/* Style pour le titre */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-decoration: underline; 
+    text-align: center;
+  }
+  
+  /* Style pour le groupe de boutons */
+  .button-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Style pour les boutons */
+  .btn-primary {
+    background: linear-gradient(90deg, #546E7A, #78909C); 
+    color: white; 
+    margin-right: 10px; 
+    border-radius: 8px;
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(90deg, #90A4AE, #78909C); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+  }
+  
