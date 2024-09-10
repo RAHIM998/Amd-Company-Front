@@ -1,0 +1,89 @@
+/* Container for the burger details */
+.product-details {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, #78909C, #90A4AE);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Centered title */
+  h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  /* Card that holds the burger content */
+  .product-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Image container styling */
+  .image-container {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  /* Styling for the burger image */
+  .product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .product-image:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Paragraph styling */
+  p {
+    font-size: 18px;
+    color: #424242;
+    margin: 10px 0;
+  }
+  
+  /* Container for the action buttons */
+  .action-buttons {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Button base styling */
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+  }
+  
+  /* Edit button styling */
+  .btn-edit {
+    background: linear-gradient(90deg, #78909C, #90A4AE); 
+    color: #ffffff;
+  }
+  
+  .btn-edit:hover {
+    background: linear-gradient(90deg, #90A4AE, #78909C);
+ }
+  
+  /* Delete button styling */
+  .btn-delete {
+    background: linear-gradient(90deg, #78909C, #90A4AE); 
+    color: #ffffff;
+  }
+  
+  .btn-delete:hover {
+    background: linear-gradient(90deg, #90A4AE, #78909C);
+  }
+  

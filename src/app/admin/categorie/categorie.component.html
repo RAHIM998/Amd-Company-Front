@@ -1,0 +1,34 @@
+
+<div class="container">
+    <h1>Gestions des Catégories</h1>
+    <button class="custom-button" type="button" routerLink="/admin/form-category">Ajouter</button><br><br>
+  <div class="content table-responsive table-full-width">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="text-center">Id</th>
+          <th class="text-center">Libellé</th>
+          <th class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let categorie of Category">
+          <td class="text-center" >{{categorie.id}}</td>
+          <td class="text-center">{{categorie.libelle}}</td>
+          <td class="td-actions text-center">
+            <a rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs" routerLink="/admin/details-category/{{categorie.id}}">
+              <i class="fa fa-user"></i>
+            </a>
+            <a rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs" routerLink="/admin/update-category/{{categorie.id}}">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" (click)="DeleteCategory(categorie.id)">
+              <i class="fa fa-times"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+ 

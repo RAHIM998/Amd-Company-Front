@@ -1,10 +1,31 @@
-<div class="category-products">
-    <h1>Nos {{categoryName}}</h1>
-    <div *ngFor="let produit of products" class="product-item">
-      <h2>{{ produit.libelle }}</h2>
-      <p>{{ produit.description }}</p>
-      <p>Prix: {{ produit.prix }}€</p>
-      <p>Stock: {{ produit.stock }}</p>
-    </div>
+
+<h1 class="title">Nos {{categoryName}}</h1>
+
+<div class="product-cards-container container">
+  <div *ngIf="products.length === 0" class="no-products">Aucun produit disponible</div>
+  <div *ngFor="let produit of products" class="product-card">
+    <a [routerLink]="['/produit', produit.id]" class="product-link">
+
+      <img *ngIf="produit.images && produit.images.length > 0" 
+           [src]="'data:image/png;base64,' + produit.images[0].image" 
+           alt="{{ produit.libelle }}" 
+           class="product-image">
+      <div class="product-info">
+        <h2 class="product-title">{{ produit.libelle }}</h2>
+        <p class="product-description">{{ produit.description }}</p>
+        <p class="product-stock" [ngClass]="{'low-stock-price': produit.stock < 5}">
+          <ng-container *ngIf="produit.stock > 0; else outOfStock">
+            Stock disponible: <span>{{ produit.stock }}</span>
+          </ng-container>
+          <ng-template #outOfStock>
+            <span class="out-of-stock">Solde out</span>
+          </ng-template>
+        </p>
+        
+        <p class="product-price">Prix : <span>{{ produit.prix }} FCFA</span></p>
+      </div>
+    </a>
+    <button class="order-button" (click)="ajouterProduit(produit)" [disabled]="produit.stock === 0">Ajouter au panier</button>
   </div>
+
   

@@ -22,7 +22,6 @@ export class UserComponent implements OnInit{
     this.getUser(); 
   }
 
-  //Méthode de récupération de l'utilisateur connecté 
   getUser(): void {
     this.id = localStorage.getItem('id');
     this.userService.getUser(this.id).subscribe(

@@ -2,9 +2,10 @@
 .cart-container {
     margin-top: 40px;
     padding: 10px;
-    background-color: #adaaaa; /* Couleur de fond légère */
-    border-radius: 8px; /* Coins arrondis pour le conteneur */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    background-color: #e8e4e4; 
+    border-radius: 8px; 
+    max-width: 700px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   /* Titre du panier */
@@ -31,8 +32,8 @@
   
   /* Entêtes du tableau */
   thead {
-    background: linear-gradient(135deg, #000000, #1e4572);
-    color: #fff; /* Couleur du texte en blanc */
+    background: linear-gradient(90deg, rgba(34,34,34,1) 0%, rgba(36,123,160,1) 100%);
+    color: #fff;
   }
   
   th {
@@ -42,7 +43,7 @@
   
   /* Lignes du tableau */
   tbody tr {
-    border-bottom: 1px solid #ddd; /* Ligne de séparation légère */
+    border-bottom: 1px solid #ddd; 
   }
   
   td {
@@ -51,64 +52,63 @@
   
   /* Image du produit */
   .product-image {
-    max-width: 100px; /* Limiter la taille de l'image */
+    max-width: 100px; 
     max-height: 100px;
     object-fit: cover;
-    border-radius: 5px; /* Coins arrondis pour l'image */
+    border-radius: 5px; 
   }
   
   /* Boutons pour ajuster la quantité */
   button {
-    background-color: #007bff; /* Couleur principale du bouton */
-    color: #fff; /* Texte en blanc */
+    color: #fff; 
     border: none;
     padding: 5px 10px;
     margin: 0 5px;
     cursor: pointer;
-    border-radius: 5px; /* Coins arrondis pour le bouton */
+    border-radius: 5px;
   }
   
   button:hover {
-    background-color: #0056b3; /* Couleur de survol du bouton */
+    background-color: #0056b3; 
   }
   
   /* Icône pour retirer le produit */
   .remove-icon {
-    color: #dc3545; /* Couleur pour l'icône de suppression */
+    color: #dc3545; 
     font-size: 20px;
     cursor: pointer;
   }
   
   /* Conteneur des totaux */
   .cart-totals {
-    background-color: #fff; /* Couleur de fond pour les totaux */
-    border: 1px solid #ddd; /* Bordure légère */
+    background-color: #fff; 
+    border: 1px solid #ddd; 
     padding: 10px;
-    border-radius: 5px; /* Coins arrondis */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   /* Bouton de commande */
   .order-button {
-    background: linear-gradient(135deg, #000000, #1e4572);
+    background: linear-gradient(90deg, rgba(34,34,34,1) 0%, rgba(36,123,160,1) 100%);
   }
   
   .order-button:hover {
-    background-color: #218838; /* Couleur de survol pour le bouton de commande */
+    background: linear-gradient(90deg, rgba(36,123,160,1) 100%, rgba(34,34,34,1) 0% );
   }
   
   /* Bouton pour vider le panier */
   button.clear-cart {
-    background-color: #dc3545; /* Couleur principale pour le bouton de suppression */
+    background-color: #dc3545; 
   }
   
   button.clear-cart:hover {
-    background-color: #c82333; /* Couleur de survol pour le bouton de suppression */
+    background-color: #c82333; 
   }
   
   /* Message d'erreur */
   .error-message {
-    color: #dc3545; /* Couleur pour les messages d'erreur */
+    color: #dc3545;
     font-size: 16px;
     margin-top: 10px;
   }

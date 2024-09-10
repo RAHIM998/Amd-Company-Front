@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Produits } from 'src/app/shared/models/Produits/produits';
 import { CategoryServiceService } from 'src/app/shared/services/CategoryService/category-service.service';
+import { PanierService } from 'src/app/shared/services/Panier/panier.service';
 import { ProduitServiceService } from 'src/app/shared/services/ProduitService/produit-service.service';
 
 @Component({
@@ -18,6 +19,7 @@ export class CategoryproductComponent implements OnInit {
   constructor(
     private produitService: ProduitServiceService,
     private categoryService: CategoryServiceService,
+    private panierService: PanierService,
     private route: ActivatedRoute
   ) { }
   
@@ -25,7 +27,7 @@ export class CategoryproductComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.categoryId = +params.get('id')!;
       this.loadProducts();
-      this.loadCategoryName(); // Ajouter cette ligne pour charger le nom de la catégorie
+      this.loadCategoryName(); 
     });
   }
 
@@ -47,5 +49,10 @@ export class CategoryproductComponent implements OnInit {
         console.error('Erreur lors de la récupération du nom de la catégorie');
       }
     });
+  }
+
+  //Méthode d'ajout de produit dans le panier 
+  ajouterProduit(products: Produits): void {
+    this.panierService.AddToPanier(products);
   }
 }

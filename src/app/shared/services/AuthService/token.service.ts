@@ -33,6 +33,5 @@ export class TokenService {
   //Service de déconnexion de l'utilisateur
   logOut(){
     localStorage.clear()
-    this.router.navigate(['/client/products/catalogue']);
   }
 }

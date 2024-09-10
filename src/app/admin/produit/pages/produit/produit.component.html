@@ -1,59 +1,62 @@
-<div>
-    <button class="custom-button" type="button" routerLink="/admin/produit/form">
-      Ajouter
-    </button>
-    
-    <button rel="tooltip" title="Archive" class="archive btn btn-warning btn-simple btn-xs" routerLink="">
-      <i class="fa fa-archive"></i> Archives
-    </button>
-  </div>
-  
-  <br><br>
-  
-  <div class="content table-responsive table-full-width">
-    <table class="table">
-      <thead>
-        <tr>
-          <th class="text-center">Id</th>
-          <th class="text-center">Catégorie</th>
-          <th class="text-center">Libellé</th>
-          <th class="text-center">Prix</th>
-          <th class="text-center">Stock</th>
-          <th class="text-center">Description</th>
-          <th class="text-center">Photo</th>
-          <th class="text-center">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let produit of TabProduit">
-            <td class="text-center">{{produit.id}}</td>
-            <td class="text-center">{{produit.categorie?.id}}</td>
-            <td class="text-center">{{produit.libelle}}</td>
-            <td class="text-center">{{produit.prix}}</td>
-            <td class="text-center">{{produit.stock}}</td>
-            <td class="text-center product-description" title="{{ produit.description }}">
-                {{ truncateDescription(produit.description ?? '', 4) }}
-            </td>
-            <td class="text-center">
-                <img *ngIf="produit.images && produit.images.length > 0" 
-                [src]="'data:image/png;base64,' + produit.images[0].image" 
-                alt="{{ produit.libelle }}" 
-                class="product-image">
-            </td>
-            <td class="td-actions text-center">
-                <a rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs" >
-                <i class="fa fa-user"></i>
-                </a>
-                <a rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs"  >
-                <i class="fa fa-edit"></i>
-                </a>
-                <a rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" (click)="DeleteProduit(produit.id)">
-                <i class="fa fa-times"></i>
-                </a>
-            </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 
-  
+<div class="container">
+  <div>
+    <h1>Gestions des produits</h1>
+      <button class="custom-button" type="button" routerLink="/admin/produit/form">
+        Ajouter
+      </button>
+      
+      <button rel="tooltip" title="Archive" class="archive btn btn-warning btn-simple btn-xs" routerLink="">
+        <i class="fa fa-archive"></i> Archives
+      </button>
+    </div>
+    
+    <br><br>
+    
+    <div class="content table-responsive table-full-width">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="text-center">Id</th>
+            <th class="text-center">Catégorie</th>
+            <th class="text-center">Libellé</th>
+            <th class="text-center">Prix</th>
+            <th class="text-center">Stock</th>
+            <th class="text-center">Description</th>
+            <th class="text-center">Photo</th>
+            <th class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let produit of TabProduit">
+              <td class="text-center">{{produit.id}}</td>
+              <td class="text-center">{{produit.category?.libelle}}</td>
+              <td class="text-center">{{produit.libelle}}</td>
+              <td class="text-center">{{produit.prix}}</td>
+              <td class="text-center">{{produit.stock}}</td>
+              <td class="text-center product-description" title="{{ produit.description }}">
+                  {{ truncateDescription(produit.description ?? '', 4) }}
+              </td>
+              <td class="text-center">
+                  <img *ngIf="produit.images && produit.images.length > 0" 
+                  [src]="'data:image/png;base64,' + produit.images[0].image" 
+                  alt="{{ produit.libelle }}" 
+                  class="product-image">
+              </td>
+              <td class="td-actions text-center">
+                  <a rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs" routerLink="/admin/produit/details/{{produit.id}}">
+                  <i class="fa fa-user"></i>
+                  </a>
+                  <a rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs" routerLink="/admin/produit/updateProduct/{{produit.id}}">
+                  <i class="fa fa-edit"></i>
+                  </a>
+                  <a rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" (click)="DeleteProduit(produit.id)">
+                  <i class="fa fa-times"></i>
+                  </a>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+</div>

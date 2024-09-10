@@ -42,9 +42,8 @@ export class ProduitComponent implements OnInit{
   
     return words.slice(0, wordLimit).join(' ') + '...';
   }
-  
 
-   //Méthode de suppression des burgers 
+  //Méthode de suppression des burgers 
    DeleteProduit(id: any) {
     Swal.fire({
       title: 'Êtes-vous sûr?',

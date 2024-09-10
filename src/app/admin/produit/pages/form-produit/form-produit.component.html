@@ -1,65 +1,74 @@
-<!-- add-burger.component.html -->
 <div class="container">
-    <h2>Ajouter un produit</h2>
-    <form >
-      
-        <!-- Catégorie -->
-        <div class="form-group">
-            <label for="category">Catégorie</label>
-            <select id="category" formControlName="category" class="form-control">
-            <option value="">Sélectionner une catégorie</option>
-            <option value="1">Catégorie 1</option>
-            <option value="2">Catégorie 2</option>
+  <h2>{{ id ? 'Modifier' : 'Ajouter' }} un produit</h2>
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    
+    <!-- Catégorie -->
+    <div class="form-group">
+      <label for="category">Catégorie</label>
+      <select id="category" formControlName="category_id" class="form-control">
+        <option value="" disabled>Sélectionner une catégorie</option>
+        <option *ngFor="let category of categories" [value]="category.id">
+          {{ category.libelle }}
+        </option>
+      </select>
+      <div *ngIf="productForm.get('category_id')?.invalid && (productForm.get('category_id')?.dirty || productForm.get('category_id')?.touched)" class="text-danger">
+        <small *ngIf="productForm.get('category_id')?.errors?.['required']">La catégorie est requise.</small>
+        <small *ngIf="productForm.get('category_id')?.errors?.['pattern']">Catégorie invalide.</small>
+      </div>
+    </div>
 
-            </select>
-           
-        </div>
+    <!-- Libellé -->
+    <div class="form-group">
+      <label for="libelle">Libellé</label>
+      <input type="text" id="libelle" formControlName="libelle" class="form-control" placeholder="Nom du produit">
+      <div *ngIf="productForm.get('libelle')?.invalid && (productForm.get('libelle')?.dirty || productForm.get('libelle')?.touched)" class="text-danger">
+        <small *ngIf="productForm.get('libelle')?.errors?.['required']">Le nom est requis.</small>
+        <small *ngIf="productForm.get('libelle')?.errors?.['maxlength']">Le nom ne peut pas dépasser 255 caractères.</small>
+        <small *ngIf="productForm.get('libelle')?.errors?.['pattern']">Le nom ne peut contenir que des lettres et des chiffres.</small>
+      </div>
+    </div>
 
-        <!-- Libellé -->
-        <div class="form-group">
-            <label for="name">Libellé</label>
-            <input type="text" id="libelle" formControlName="libelle" class="form-control" placeholder="Nom du produit">
-            
-        </div>
-    
-        <!-- Prix -->
-        <div class="form-group">
-            <label for="price">Prix</label>
-            <input type="text" id="prix" formControlName="prix" class="form-control" placeholder="Prix du produit">
-           
-        </div>
-    
-        
-    
-        <!-- Stock -->
-        <div class="form-group">
-            <label for="stock">Stock</label>
-            <input type="number" id="stock" formControlName="stock" class="form-control" placeholder="Quantité en stock">
-            
-        </div>
-    
-        <!-- Description -->
-        <div class="form-group">
-            <label for="description">Description</label>
-            <textarea id="description" formControlName="description" class="form-control" placeholder="Description du produit"></textarea>
-            
-        </div>
-    
-        <!-- Image URL -->
-        <div class="form-group">
-            <label for="image">Images du produit</label>
-            <input id="image" type="text" formControlName="image" class="form-control" placeholder="Photo">
-          
-        </div>
-    
-        <div class="mt-2">
-            <img [src]="imagePreview" alt="Image Preview" *ngIf="imagePreview" />
-        </div>
-    
-        <div class="button-group">
-            <button type="submit" class="btn" >Ajouter</button>
-            <button type="reset" class="btn" >Annuler</button>
-        </div>
-    </form>
-  </div>
-  
+    <!-- Prix -->
+    <div class="form-group">
+      <label for="prix">Prix</label>
+      <input type="text" id="prix" formControlName="prix" class="form-control" placeholder="Prix du produit">
+      <div *ngIf="productForm.get('prix')?.invalid && (productForm.get('prix')?.dirty || productForm.get('prix')?.touched)" class="text-danger">
+        <small *ngIf="productForm.get('prix')?.errors?.['required']">Le prix est requis.</small>
+        <small *ngIf="productForm.get('prix')?.errors?.['min']">Le prix doit être supérieur ou égal à 0.</small>
+        <small *ngIf="productForm.get('prix')?.errors?.['pattern']">Le prix doit être un nombre valide.</small>
+      </div>
+    </div>
+
+    <!-- Stock -->
+    <div class="form-group">
+      <label for="stock">Stock</label>
+      <input type="number" id="stock" formControlName="stock" class="form-control" placeholder="Quantité en stock">
+      <div *ngIf="productForm.get('stock')?.invalid && (productForm.get('stock')?.dirty || productForm.get('stock')?.touched)" class="text-danger">
+        <small *ngIf="productForm.get('stock')?.errors?.['required']">Le stock est requis.</small>
+        <small *ngIf="productForm.get('stock')?.errors?.['min']">Le stock doit être supérieur ou égal à 0.</small>
+        <small *ngIf="productForm.get('stock')?.errors?.['pattern']">Le stock doit être un nombre valide.</small>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description" class="form-control" rows="3" placeholder="Description du produit"></textarea>
+      <div *ngIf="productForm.get('description')?.invalid && (productForm.get('description')?.dirty || productForm.get('description')?.touched)" class="text-danger">
+        <small *ngIf="productForm.get('description')?.errors?.['maxlength']">La description ne peut pas dépasser 1000 caractères.</small>
+      </div>
+    </div>
+
+    <!-- Image -->
+    <div class="form-group">
+      <label for="image">Image</label>
+      <input type="file" id="image" (change)="onFileChange($event)" multiple class="form-control">
+      <div *ngFor="let image of imagePreviews" class="img-preview">
+        <img [src]="image" alt="Image prévisualisée" class="img-thumbnail" />
+      </div>
+    </div>
+
+    <!-- Boutons -->
+    <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid">{{ id ? 'Modifier' : 'Ajouter' }}</button>
+    <button type="button" (click)="navigateToProductList()" class="btn btn-secondary">Annuler</button>  </form>
+</div>

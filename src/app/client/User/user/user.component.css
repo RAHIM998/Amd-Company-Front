@@ -20,7 +20,7 @@
     height: 150px;
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid #1e4572;
+    border: 5px solid #144c61;
   }
   
   .profile-image img {
@@ -33,7 +33,7 @@
     position: absolute;
     right: 0;
     margin-right: 20px;
-    background-color: #1e4572;
+    background: linear-gradient(90deg, rgba(34,34,34,1) 0%, rgba(36,123,160,1) 100%);
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
@@ -42,7 +42,8 @@
   }
   
   .edit-icon:hover {
-    background-color: #162f57;
+    background: linear-gradient(90deg, rgba(36,123,160,1) 100%, rgba(34,34,34,1) 0% );
+
   }
   
   .edit-icon i {

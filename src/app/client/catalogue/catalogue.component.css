@@ -80,7 +80,7 @@
 }
 
 .product-price span {
-    color: #155391;
+    color: #31444c;
 }
 
 .order-button {
@@ -88,7 +88,7 @@
     width: calc(100% - 30px);
     margin: 0 15px 15px 15px;
     padding: 10px 20px;
-    background: linear-gradient(135deg, #000000, #1e4572);
+    background: linear-gradient(90deg, rgba(34,34,34,1) 0%, rgba(36,123,160,1) 100%);
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -97,7 +97,7 @@
 }
 
 .order-button:hover {
-    background: linear-gradient(135deg, #1e4572, #8399A4);
+    background: linear-gradient(90deg, rgba(36,123,160,1) 100%, rgba(34,34,34,1) 0% );
     transform: translateY(-3px);
     color: #f1ecec;
 }

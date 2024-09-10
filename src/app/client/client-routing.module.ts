@@ -6,6 +6,10 @@ import { AproposComponent } from './apropos/apropos.component';
 import { CategoryproductComponent } from './categoryproduct/categoryproduct.component';
 import { DetailsProduitComponent } from './catalogue/details-produit/details-produit.component';
 import { CartComponent } from './cart/cart.component';
+import { RecapCommandeComponent } from './cart/pages/recap-commande/recap-commande.component';
+import { MesCommandesComponent } from './cart/pages/mes-commandes/mes-commandes.component';
+import { UserComponent } from './User/user/user.component';
+import { FormUserComponent } from './User/form-user/form-user.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -13,7 +17,11 @@ const routes: Routes = [
   {path: 'apropos', component: AproposComponent},
   {path: 'category/:id', component: CategoryproductComponent },
   {path: 'produit/:id', component: DetailsProduitComponent },
-  { path: 'panier', component: CartComponent },
+  {path: 'panier', component: CartComponent},
+  {path: 'recapCommande', component: RecapCommandeComponent },
+  {path: 'mesCommande', component: MesCommandesComponent },
+  {path: 'client/profile', component: UserComponent},
+  {path: 'client/modifProfile/:id', component: FormUserComponent},
   {path: 'layout', loadChildren:() => import('./layout/layout.module').then(m => m.LayoutModule) },
  
 ];

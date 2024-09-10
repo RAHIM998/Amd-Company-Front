@@ -48,6 +48,7 @@
     color: #ffffff; 
     font-weight: bold;
     text-transform: uppercase;
+    margin-left: 10px;
     font-size: 0.75rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
@@ -60,3 +61,43 @@
     gap: 16px; 
   }
   
+
+  .image-preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    margin-top: 10px;
+  }
+  
+  .image-preview-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .image-preview {
+    width: 100px; 
+    height: auto; 
+    margin-bottom: 5px; 
+    border: 1px solid #ddd; 
+    border-radius: 5px;
+  }
+  
+/* Style du <select> */
+/* add-burger.component.css */
+select.form-control {
+  background-color: #fff; /* Arrière-plan blanc */
+  color: #000; /* Texte noir */
+}
+
+option {
+  color: #000; /* Texte noir pour les options */
+  background-color: #fff; /* Arrière-plan blanc pour les options */
+}
+
+/* Optionnel : survol des options */
+option:hover {
+  background-color: #f0f0f0; /* Fond légèrement gris clair lors du survol */
+}
+
+

@@ -1,0 +1,121 @@
+.table {
+    background-color: #78909C;
+    color: #ffffff; 
+    width: 100%;
+    border-collapse: collapse; /* Ajoute une bordure uniforme */
+  }
+  
+  .table thead th {
+    background-color: #546E7A; 
+    color: #ffffff; 
+    padding: 10px; /* Ajoute du padding pour plus de visibilité */
+  }
+  
+  .table tbody tr {
+    background-color: #90A4AE; 
+    color: #ffffff;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #607D8B; 
+  }
+  
+  .table tfoot tr {
+    background-color: #78909C; /* Couleur de fond pour la ligne de pied de tableau */
+  }
+  
+  .text-bold {
+    font-weight: bold;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  
+  .address {
+    font-size: 1.2rem; /* Augmente la taille de la police pour plus de visibilité */
+    line-height: 1.4; /* Augmente l'espace entre les lignes pour une meilleure lisibilité */
+    margin-top: 10px; /* Ajoute un espace au-dessus du paragraphe */
+    margin-bottom: 10px; /* Ajoute un espace en dessous du paragraphe */
+  }
+  
+  .client-info {
+    text-align: right; /* Aligne le texte à droite */
+  }
+  
+  .centered-title {
+    text-align: center; /* Centre le titre */
+    margin: 20px 0; /* Ajoute un espace au-dessus et en-dessous du titre */
+  }
+  
+  /* Style pour les boutons */
+  .custom-button {
+    background: linear-gradient(90deg, #78909C, #90A4AE); 
+    color: #ffffff; 
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease; 
+    border: none; 
+    cursor: pointer; 
+    margin-left: 10px;
+  }
+  
+  .custom-button:hover {
+    background: linear-gradient(90deg, #90A4AE, #78909C); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .custom-button:active {
+    background: linear-gradient(90deg, #546E7A, #78909C); 
+  }
+  
+  .custom-button:focus {
+    outline: none;
+  }
+  
+  /* Styles spécifiques pour les boutons Confirmer et Annuler */
+  .confirm-button {
+    background-color: #4CAF50; /* Vert */
+  }
+  
+  .cancel-button {
+    background-color: #F44336; /* Rouge */
+  }
+  
+  .button-group {
+    margin-top: 20px;
+    text-align: right;
+  }
+  
+  .custom-alert {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8d7da;
+    color: #383838; 
+    padding: 0.75rem; 
+    border-radius: 0.25rem;
+    font-weight: bold; 
+    max-width: fit-content;
+    margin: auto; 
+  }
+  
+  .custom-alert i {
+    margin-right: 0.5rem; 
+    font-size: 1.2rem;
+  }
+  
+  .custom-alert span {
+    vertical-align: middle;
+    text-align: center; 
+  }
+  
+  .product-image {
+    max-width: 80px;
+    max-height: 200px;
+    object-fit: cover;
+  }

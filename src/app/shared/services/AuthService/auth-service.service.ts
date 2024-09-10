@@ -4,8 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Login } from '../../models/Authentification/login';
 import { Observable } from 'rxjs';
 import { ApiResponse } from '../../models/api-response';
-import { Users } from '../../models/Users/users';
 import { AuthResponse } from '../../models/Authentification/auth-response';
+import { AuthRegister } from '../../models/auth-register';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +23,14 @@ export class AuthServiceService {
     return this.http.post<ApiResponse<AuthResponse>>(`${this.url}/login`, Auth);
   }
 
+  Register(data: any): Observable<ApiResponse<AuthRegister>> {
+    return this.http.post<ApiResponse<AuthRegister>>(`${this.url}/register`, data);
+  }
+
+  //Vérification du rôle des utilisateurs
+  isAdmin(): boolean {
+    const userRole = localStorage.getItem('role');
+    return userRole === 'admin';
+  }
 
 }

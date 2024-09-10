@@ -12,7 +12,12 @@ import { CategoryproductComponent } from './categoryproduct/categoryproduct.comp
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { DetailsProduitComponent } from './catalogue/details-produit/details-produit.component';
 import { CartComponent } from './cart/cart.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SecuriteModule } from '../securite/securite.module';
+import { RecapCommandeComponent } from './cart/pages/recap-commande/recap-commande.component';
+import { MesCommandesComponent } from './cart/pages/mes-commandes/mes-commandes.component';
+import { FormUserComponent } from './User/form-user/form-user.component';
+import { UserComponent } from './User/user/user.component';
 
 @NgModule({
   declarations: [ 
@@ -23,13 +28,20 @@ import { CartComponent } from './cart/cart.component';
     CategoryproductComponent,
     CatalogueComponent,
     DetailsProduitComponent,
-    CartComponent
+    CartComponent,
+    RecapCommandeComponent,
+    MesCommandesComponent,
+    UserComponent,
+    FormUserComponent,
   ],
   imports: [
     CommonModule,
     ClientRoutingModule,
     LayoutModule,
-    CarouselModule
+    CarouselModule,
+    ReactiveFormsModule,
+    SecuriteModule,
+    FormsModule
   ]
 })
 export class ClientModule { }

@@ -1,1 +1,78 @@
-<p>details-commandes works!</p>
+<div *ngIf="commande">
+    <h2>Détails de la Commande #{{commande.id}}</h2>
+    <p>Statut actuel : {{ commande.status }}</p>
+    <p>Numéro de commande: {{commande.numeroCommande}}</p>
+    <p>Date de commande: {{commande.dateCommande}}</p>
+  
+    <div class="client-info">
+        <h2>Client : {{commande.user.name}}</h2>
+        <p class="address">Téléphone : {{commande.user.telephone}}</p>
+        <p class="address">Adresse de livraison: {{commande.adresseLivraison}}</p>
+    </div>
+  
+    <h2 class="centered-title">Produits commandés</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Image du produuit</th>
+          <th>Nom du produuit</th>
+          <th>Quantité commandée</th>
+          <th>Prix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let prod of commande.produits">
+          <td class="text-center">
+            <img *ngIf="prod.images && prod.images.length > 0" 
+              [src]="'data:image/png;base64,' + prod.images[0].image" 
+              alt="{{ prod.libelle }}" 
+              class="product-image">
+        </td>
+          <td>{{ prod.libelle }}</td>
+          <td>{{ prod.pivot.quantite }}</td> 
+          <td>{{ prod.prix }}<span class="currency">  FCFA</span></td> 
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" class="text-right"><strong>Montant Total :</strong></td>
+          <td class="text-bold">{{ commande.montant }} <span class="currency">FCFA</span></td>
+        </tr>
+      </tfoot>
+      
+    </table>
+    
+    <div class="button-group">
+
+      <!-- Si la commande est en attente -->
+      <div *ngIf="commande.status === 'pending'">
+        <button (click)="changeStatus(commande.id, 'accepted')" class="custom-button confirm-button">Confirmer</button>
+        <button (click)="changeStatus(commande.id, 'rejected')" class="custom-button cancel-button">Annuler</button>
+      </div>
+
+      <!-- Si la commande est acceptée -->
+      <div *ngIf="commande.status === 'accepted'">
+        <button (click)="changeStatus(commande.id, 'delivered')" class="custom-button confirm-button">Livrer</button>
+      </div>
+
+      <!-- Message si la commande est livrée ou annulée -->
+      <div *ngIf="commande.status === 'delivered'">
+        <p>La commande a été livrée.</p>
+      </div>
+
+      <div *ngIf="commande.status === 'rejected'">
+        <p>La commande a été annulée.</p>
+      </div>
+
+      </div>
+      
+</div>
+
+<div *ngIf="errorMessage" class="alert alert-danger mt-3 offset-4 custom-alert">
+    <i class="fas fa-exclamation-triangle"></i> 
+    <span>{{ errorMessage }}</span>
+  </div>
+  
+<div *ngIf="error">
+    <p>{{ error }}</p>
+</div>

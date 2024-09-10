@@ -6,7 +6,7 @@
 
 .horizontal-navbar {
     width: 100%;
-    background: linear-gradient(135deg, #000000, #1e4572);
+    background: linear-gradient(90deg, rgba(34,34,34,1) 0%, rgba(36,123,160,1) 100%);
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -56,7 +56,7 @@
 }
 
 .main-menu li a:hover {
-    color: #ffcc00; /* couleur de survol */
+    color: #b8daff !important;
 }
 
 .category-menu {
@@ -108,7 +108,7 @@
 }
 
 .cart-icon:hover {
-    color: #ffcc00; /* couleur de survol */
+    color: #b8daff !important;
 }
 
 .cart-badge {
@@ -122,13 +122,13 @@
     font-size: 12px;
     min-width: 20px;
     text-align: center;
-    line-height: 20px; /* Aligner le texte verticalement */
+    line-height: 20px;
 }
 
 .cart-label {
-    margin-top: 5px; /* Espacement entre l'icône et le label */
-    font-size: 12px; /* Taille du texte du label */
-    color: #fff; /* Couleur du texte */
+    margin-top: 5px;
+    font-size: 12px; 
+    color: #fff; 
 }
 
 /* Style pour le menu déroulant */
@@ -149,7 +149,7 @@
 .dropdown-menu {
     display: none;
     position: absolute;
-    background: linear-gradient(135deg, #000000, #1e4572);
+    background: linear-gradient(90deg, rgba(34,34,34,1) 0%, rgba(36,123,160,1) 100%);
     padding: 10px 0;
     top: 100%;
     left: 0;
@@ -173,9 +173,9 @@
 }
 
 .dropdown-menu li a:hover {
-    background-color: #555; /* couleur de survol des sous-menus */
+    background: linear-gradient(90deg, #78909C, #90A4AE); 
 }
 
 .nav-item:hover .dropdown-menu {
-    display: block; /* Affiche le sous-menu au survol */
+    display: block; 
 }

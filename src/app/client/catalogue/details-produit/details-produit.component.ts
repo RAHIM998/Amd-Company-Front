@@ -54,7 +54,6 @@ export class DetailsProduitComponent implements OnInit {
   //Méthode d'ajout au panier 
   addToCart(product: Produits): void {
     this.panierService.AddToPanier(product);
-    alert(`${product.libelle} a été ajouté au panier !`);
   }
 
   

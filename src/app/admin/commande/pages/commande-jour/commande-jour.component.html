@@ -1,0 +1,37 @@
+<div class="container">
+    <h2 class="title">Gestion des Commandes du jour</h2>
+    
+    <div class="content table-responsive table-full-width">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="text-center">Id</th>
+            <th class="text-center">Client</th>
+            <th class="text-center">Numéro de commande</th>
+            <th class="text-center">Date de commande</th>
+            <th class="text-center">Montant de la commande</th>
+            <th class="text-center">Adresse de livraison</th>
+            <th class="text-center">Status</th>
+            <th class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let commande of TabCommandeJour">
+            <td class="text-center">{{commande.id}}</td>
+            <td class="text-center">{{commande.user?.name}}</td>
+            <td class="text-center">{{commande.numeroCommande}}</td>
+            <td class="text-center">{{commande.dateCommande}}</td>
+            <td class="text-center">{{commande.montant}}</td>
+            <td class="text-center">{{commande.adresseLivraison}}</td>
+            <td class="text-center">{{commande.status}}</td>
+            <td class="td-actions text-center">
+              <a rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs" routerLink="/admin/commande/details/{{commande.id}}">
+                <i class="fa fa-user"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

@@ -1,0 +1,40 @@
+
+.about-container {
+    display: flex;
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.502);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.photo img {
+    border-radius: 8px;
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+}
+
+.text {
+    margin-left: 30px;
+}
+
+.text h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: #1e4572;
+}
+
+.text p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.text strong {
+    color: #333;
+}

@@ -1,0 +1,84 @@
+.order-confirmation.container {
+    margin-top: 20px;
+  }
+  
+  h1{
+    text-align: center;
+    color: #0d0f27; 
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .order-confirmation table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+  }
+  
+  .order-confirmation th, .order-confirmation td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .order-confirmation th {
+    background: linear-gradient(90deg, rgba(34,34,34,1) 0%, rgba(36,123,160,1) 100%);
+    text-align: left;
+    color: aliceblue;
+  }
+  
+  .total {
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 20px;
+  }
+  
+  .delivery-address {
+    margin-bottom: 20px;
+  }
+  
+  .product-image {
+    max-width: 100px; 
+    max-height: 100px;
+    object-fit: cover;
+    border-radius: 5px; 
+  }
+  
+  .confirm-order-button {
+    background: linear-gradient(90deg, rgba(34,34,34,1) 0%, rgba(36,123,160,1) 100%);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .confirm-order-button:hover {
+    background: linear-gradient(90deg, rgba(36,123,160,1) 100%, rgba(34,34,34,1) 0% );
+  }
+  
+
+  .form-group-row {
+    display: flex;
+    gap: 20px; 
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+  .form-group-row .delivery-address,
+  .form-group-row .payment-method {
+    flex: 1; 
+  }
+  
+  .form-group-row label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group-row .form-control {
+    width: 100%;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.9em;
+  }

@@ -1,1 +1,27 @@
-<p>details-produit works!</p>
+
+
+
+<div class="product-details container" *ngIf="Produit">
+    <h1>Détails du produit</h1>
+    <div class="product-card">
+      <div class="image-container">
+        <img *ngIf="Produit.images && Produit.images.length > 0" 
+             [src]="'data:image/png;base64,' + Produit.images[0].image" 
+             alt="{{ Produit.libelle }}" 
+             class="product-image">
+      </div>
+  
+      <p><strong>Id :</strong> {{Produit.id}}</p>
+      <p><strong>Catégorie :</strong> {{Produit.category?.libelle}}</p>
+      <p><strong>Libellé :</strong> {{Produit.libelle}}</p>
+      <p><strong>Prix :</strong> {{Produit.prix}}</p>
+      <p><strong>Stock :</strong> {{Produit.stock}}</p>
+      <p><strong>Description :</strong> {{Produit.description}}</p>
+  
+      <div class="action-buttons">
+        <button class="btn btn-edit" routerLink="/admin/produit/updateProduct/{{Produit.id}}">Modifier</button>
+        <button class="btn btn-delete" (click)="DeleteProduit(Produit.id)">Supprimer</button>
+      </div>
+    </div>
+  </div>
+  

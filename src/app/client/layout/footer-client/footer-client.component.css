@@ -53,7 +53,7 @@ body {
 /* Styles du footer */
 .footer {
     width: 100%;
-    background: linear-gradient(135deg, #000000, #1e4572);
+    background: linear-gradient(90deg, rgba(34,34,34,1) 0%, rgba(36,123,160,1) 100%);
     color: #fff;
     padding: 20px 0;
     text-align: center;

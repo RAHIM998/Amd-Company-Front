@@ -1,0 +1,63 @@
+<div class="order-confirmation container">
+    <h1>Résumé de la Commande</h1>
+  
+    <div *ngIf="items.length === 0">
+      <p>Aucun article dans la commande.</p>
+    </div>
+  
+    <div *ngIf="items.length > 0">
+      <table>
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Nom</th>
+            <th>Prix Unitaire</th>
+            <th>Quantité</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td>
+                <img *ngIf="item.images && item.images.length > 0" [src]="'data:image/png;base64,' + item.images[0].image" alt="{{ item.libelle }}" class="product-image">
+            </td>
+            <td>{{ item.libelle }}</td>
+            <td>{{ getFormattedPrice(item.prix) }} FCFA</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ (getFormattedPrice(item.prix) || 0) * (item.quantity || 0) | number:'1.2-2' }} FCFA</td>
+        </tr>
+        </tbody>
+      </table>
+  
+      <div class="total">
+        <p>Total de la commande: {{ total | number:'1.2-2' }} FCFA</p>
+      </div>
+  
+      <div class="order-confirmation container" [formGroup]="recapForm">
+        <div class="form-group-row">
+          <div class="delivery-address">
+            <label for="address">Adresse de livraison:</label>
+            <input type="text" id="address" formControlName="adresseLivraison" class="form-control">
+            <div *ngIf="recapForm?.get('adresseLivraison')?.invalid && recapForm?.get('adresseLivraison')?.touched" class="error">
+              <small *ngIf="recapForm?.get('adresseLivraison')?.hasError('required')">L'adresse est requise.</small>
+              <small *ngIf="recapForm?.get('adresseLivraison')?.hasError('maxlength')">L'adresse ne peut pas dépasser 255 caractères.</small>
+            </div>
+          </div>
+  
+          <div class="payment-method">
+            <label for="payment">Méthode de paiement:</label>
+            <select id="payment" formControlName="method" required class="form-control">
+              <option value="orange_money">Orange Money</option>
+              <option value="delivery">Paiement à la réception</option>
+            </select>
+            <div *ngIf="recapForm?.get('method')?.invalid && recapForm?.get('method')?.touched" class="error">
+              <small *ngIf="recapForm?.get('method')?.hasError('required')">La méthode de paiement est requise.</small>
+            </div>
+          </div>
+        </div>
+  
+        <button (click)="confirmOrder()" class="confirm-order-button">Confirmer la Commande</button>
+      </div>
+    </div>
+  </div>
+  

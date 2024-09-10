@@ -1,0 +1,159 @@
+.contact-section {
+    background-color: #f5f5f5;
+    padding: 10px 10px;
+    border-radius: 10px;
+  }
+
+  h1{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: #1e4572;
+  }
+
+  p{
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+
+  }
+  
+  .contact-banner {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    max-height: 400px;
+  }
+  
+  .contact-banner img {
+    width: 100%;
+    height: auto;
+    filter: brightness(0.7);
+  }
+  
+  .banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  }
+  
+  .contact-options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+  
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+  
+  .contact-item i {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  
+  .contact-item span {
+    font-size: 16px;
+  }
+  
+  .contact-item:hover {
+    transform: scale(1.1);
+  }
+  
+  .contact-form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .btn-close, .btn-submit {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .btn-close {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .btn-close:hover {
+    background-color: #c0392b;
+  }
+  
+  .btn-submit {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .btn-submit:hover {
+    background-color: #0056b3;
+  }
+  

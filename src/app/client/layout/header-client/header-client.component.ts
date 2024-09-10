@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/shared/models/Category/category';
+import { AuthServiceService } from 'src/app/shared/services/AuthService/auth-service.service';
 import { TokenService } from 'src/app/shared/services/AuthService/token.service';
 import { CategoryServiceService } from 'src/app/shared/services/CategoryService/category-service.service';
 import { PanierService } from 'src/app/shared/services/Panier/panier.service';
@@ -18,13 +19,13 @@ export class HeaderClientComponent implements OnInit{
   userName: string = '';
   isConnected: boolean = false;
   searchQuery: string = '';
-
   
   constructor(
     private categoryService: CategoryServiceService,
     private panierService: PanierService,
     private tokenService: TokenService,
-    private router: Router
+    private router: Router,
+    private authService: AuthServiceService
   ) { }
   
   ngOnInit(): void {
@@ -33,6 +34,10 @@ export class HeaderClientComponent implements OnInit{
     this.panierService.cartItemCount$.subscribe(count => {
       this.cartItemCount = count;
     });
+  }
+
+  get isAdmin(): boolean {
+    return this.authService.isAdmin();
   }
 
   checkConnectionStatus() {
@@ -74,4 +79,6 @@ export class HeaderClientComponent implements OnInit{
     }
   }
 
+
+  
 }

@@ -7,14 +7,14 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class PanierService {
-  private items: Produits[] = []; // Liste des produits dans le panier
-  private quantities: { [id: number]: number } = {}; // Quantités de chaque produit
-  private cartItemCount = new BehaviorSubject<number>(0); // Nombre total d'articles dans le panier
+  private items: Produits[] = []; 
+  private quantities: { [id: number]: number } = {}; 
+  private cartItemCount = new BehaviorSubject<number>(0); 
 
-  cartItemCount$ = this.cartItemCount.asObservable(); // Observable pour les mises à jour du nombre d'articles
+  cartItemCount$ = this.cartItemCount.asObservable();
 
   constructor() { 
-    this.loadCart(); // Charger le panier depuis le localStorage au démarrage
+    this.loadCart(); 
   }
 
   AddToPanier(product: Produits) {
@@ -22,8 +22,8 @@ export class PanierService {
 
     if (existingProduct) {
       const currentQuantity = this.quantities[product.id];
-      if (currentQuantity < product.stock) { // Vérifier le stock avant d'ajouter
-        this.quantities[product.id] = currentQuantity + 1; // Augmenter la quantité
+      if (currentQuantity < product.stock) { 
+        this.quantities[product.id] = currentQuantity + 1; 
         Swal.fire({
           title: 'Produit ajouté',
           text: 'La quantité du produit a été augmentée.',
@@ -40,7 +40,7 @@ export class PanierService {
       }
     } else {
       this.items.push(product);
-      this.quantities[product.id] = 1; // Initialiser la quantité
+      this.quantities[product.id] = 1; 
       Swal.fire({
         title: 'Produit ajouté',
         text: 'Le produit a été ajouté au panier.',
@@ -48,7 +48,7 @@ export class PanierService {
         confirmButtonText: 'OK'
       });
     }
-    this.saveCart(); // Sauvegarder les modifications dans localStorage
+    this.saveCart();
   }
 
   /**
@@ -74,8 +74,8 @@ export class PanierService {
    */
   clearPanier() {
     this.items = [];
-    this.quantities = {}; // Réinitialiser les quantités
-    this.saveCart(); // Sauvegarder les modifications dans localStorage
+    this.quantities = {};
+    this.saveCart();
     this.cartItemCount.next(this.items.length);
     return this.items;
   }
@@ -87,8 +87,8 @@ export class PanierService {
    */
   removeItem(productId: number) {
     this.items = this.items.filter(item => item.id !== productId);
-    delete this.quantities[productId]; // Supprimer la quantité
-    this.saveCart(); // Sauvegarder les modifications dans localStorage
+    delete this.quantities[productId]; 
+    this.saveCart(); 
     this.cartItemCount.next(this.items.length);
   }
 
@@ -113,7 +113,7 @@ export class PanierService {
     } else {
       delete this.quantities[productId];
     }
-    this.saveCart(); // Sauvegarder les modifications dans localStorage
+    this.saveCart(); 
   }
 
   /**

@@ -1,1 +1,110 @@
-<p>contact works!</p>
+<div class="contact-section">
+    <h1>Contactez-nous</h1>
+  
+    <div class="contact-banner">
+      <img src="assets/images/slide2.jpg" alt="Contactez-nous">
+      <div class="banner-text">
+        <p>
+            Nous sommes là pour vous aider. Vous pouvez nous joindre par email, 
+            téléphone ou via nos réseaux sociaux.
+        </p>
+      </div>
+    </div>
+  
+    <!-- Options de contact alignées horizontalement -->
+    <div class="contact-options">
+      <div class="contact-item" (click)="openEmailForm()">
+        <i class="fas fa-envelope"></i>
+        <span>Email</span>
+      </div>
+  
+      <a href="tel:+221781128934" class="contact-item">
+        <i class="fas fa-phone"></i>
+        <span>Appel Téléphonique</span>
+      </a>
+  
+      <a href="https://wa.me/123456789" target="_blank" class="contact-item">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>
+      </a>
+  
+      <a href="https://www.instagram.com/abdou_rahim_224?igsh=MWtsNXNvZjM0MW5yaA%3D%3D&utm_source=qr" target="_blank" class="contact-item">
+        <i class="fab fa-instagram"></i>
+        <span>Instagram</span>
+      </a>
+  
+      <a href="https://www.facebook.com/ton_profil" target="_blank" class="contact-item">
+        <i class="fab fa-facebook-f"></i>
+        <span>Facebook</span>
+      </a>
+    </div>
+  
+    <!-- Formulaire de contact, caché par défaut -->
+    <div class="contact-form-container" [formGroup]="ContactForm" *ngIf="showEmailForm" (ngSubmit)="AddMessage()">
+      <h2>Contactez-nous par Email</h2>
+      <form >
+        
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input type="text" class="form-control" formControlName="name">
+          <div *ngIf="ContactForm.get('name')?.invalid && (ContactForm.get('name')?.dirty || ContactForm.get('name')?.touched)" class="text-danger">
+            <small *ngIf="ContactForm.get('name')?.errors?.['required']">Le nom est requis.</small>
+            <small *ngIf="ContactForm.get('name')?.errors?.['minlength']">Le nom doit comporter au moins 2 caractères.</small>
+            <small *ngIf="ContactForm.get('name')?.errors?.['pattern']">Le nom ne peut contenir que des lettres et des espaces.</small>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" formControlName="email">
+          <div *ngIf="ContactForm.get('email')?.invalid && (ContactForm.get('email')?.dirty || ContactForm.get('email')?.touched)" class="text-danger">
+            <small *ngIf="ContactForm.get('email')?.errors?.['required']">L'email est requis.</small>
+            <small *ngIf="ContactForm.get('email')?.errors?.['email']">L'email doit être valide.</small>
+          </div>
+        </div>
+        
+       
+        <div class="form-group">
+          <label for="phone">Numéro de téléphone</label>
+          <input type="text" class="form-control" formControlName="phone">
+          <div *ngIf="ContactForm.get('phone')?.invalid && (ContactForm.get('phone')?.dirty || ContactForm.get('phone')?.touched)" class="text-danger">
+            <small *ngIf="ContactForm.get('phone')?.errors?.['required']">Le numéro de téléphone est requis.</small>
+            <small *ngIf="ContactForm.get('phone')?.errors?.['pattern']">Le numéro de téléphone est invalide.</small>
+          </div>
+        </div>
+        
+
+        <div class="form-group">
+          <label for="object">Votre demande concerne</label>
+          <select class="form-control" formControlName="object">
+            <option value="" disabled selected>---</option>
+            <option value="Retour sur un produit acheté en ligne">Un achat en ligne</option>
+            <option value="Retour sur un produit acheté au magasin">Un achat en magasin</option>
+            <option value="Information et conseil">Information et conseil</option>
+            <option value="Supprimer mes données personnelles">Supprimer mes données personnelles</option>
+            <option value="feedback">Retour d'expérience</option>
+            <option value="Autres">Autre</option>
+          </select>
+          <div *ngIf="ContactForm.get('object')?.invalid && (ContactForm.get('object')?.dirty || ContactForm.get('object')?.touched)" class="text-danger">
+            <small *ngIf="ContactForm.get('object')?.errors?.['required']">L'objet de la demande est requis.</small>
+          </div>
+        </div>
+        
+  
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" class="form-control" formControlName="message"></textarea>
+          <div *ngIf="ContactForm.get('message')?.invalid && (ContactForm.get('message')?.dirty || ContactForm.get('message')?.touched)" class="text-danger">
+            <small *ngIf="ContactForm.get('message')?.errors?.['required']">Le message est requis et ne doit pas dépasser 1000 caractères.</small>
+          </div>
+        </div>
+        
+  
+        <div class="form-buttons">
+            <button type="button" class="btn btn-danger" (click)="closeEmailForm()">Annuler</button>
+          <button type="submit" class="btn btn-primary">Envoyer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
