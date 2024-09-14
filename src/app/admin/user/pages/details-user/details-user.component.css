@@ -1,0 +1,59 @@
+.user-details {
+    padding: 10px;
+    max-width: 700px;
+    height: 350px;
+    background: linear-gradient(90deg, #78909C, #90A4AE); 
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+.user-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.user-card-content {
+    display: flex;
+    align-items: center; 
+    padding: 20px;
+}
+
+.user-image img {
+    width: 120px; 
+    height: 120px;
+    object-fit: cover; 
+    border-radius: 50%; 
+    margin-right: 20px; 
+}
+
+.user-details-text p {
+    font-size: 18px;
+    margin: 10px 0; 
+    padding-left: 80px;
+}
+
+.burger-actions {
+    text-align: center; 
+    margin: 20px 0;
+    padding-left: 80px;
+}
+
+.burger-actions .btn {
+    margin: 0 10px; 
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #78909C, #90A4AE);
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(90deg,  #90A4AE, #78909C);
+  }

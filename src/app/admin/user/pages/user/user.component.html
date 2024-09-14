@@ -1,0 +1,46 @@
+<button class="custom-button" type="button" routerLink="/admin/user/form">
+    Ajouter
+</button>
+<br><br>
+
+<div class="content table-responsive table-full-width">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="text-center">Id</th>
+          <th class="text-center">Nom</th>
+          <th class="text-center">Téléphone</th>
+          <th class="text-center">Role</th>
+          <th class="text-center">Email</th>
+          <th class="text-center">Photo</th>
+          <th class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td class="text-center">{{user.id}}</td>
+          <td class="text-center">{{user.name}}</td>
+          <td class="text-center">{{user.telephone}}</td>
+          <td class="text-center">{{user.role}}</td>
+          <td class="text-center">{{user.email}}</td>
+          <td class="text-center profile-image">
+            <img [src]="'data:image/png;base64,' + user.image" alt="{{ user.name }}" class="product-image">
+          </td>
+          <td class="td-actions text-center">
+            <a rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs" routerLink="/admin/user/details/{{user.id}}">
+              <i class="fa fa-user"></i>
+            </a>
+            <a rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs" routerLink="/admin/user/updateUser/{{user.id}}">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" (click)="DelUser(user.id)">
+              <i class="fa fa-times"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+
+  

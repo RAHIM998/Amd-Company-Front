@@ -1,0 +1,29 @@
+<div class="user-details container mt-5">
+    <div *ngIf="error" class="error">{{ error }}</div>
+
+    <div *ngIf="user">
+      <h1>Détails de l'utilisateur</h1>
+      <div class="user-card mt-3">
+        <div class="user-card-content">
+            <div class="user-image">
+                <img *ngIf="user.image" 
+             [src]="'data:image/png;base64,' + user.image" 
+             alt="{{ user.name }}" 
+             class="product-image">
+            </div>
+
+            <div class="user-details-text">
+                <p><strong>Nom :</strong> {{ user.name }}</p>
+                <p><strong>Téléphone :</strong> {{ user.telephone }}</p>
+                <p><strong>Email :</strong> {{ user.email }}</p>
+                <p><strong>Rôle :</strong> {{ user.role }}</p>
+            </div>
+        </div>
+
+        <div class="burger-actions">
+            <button class="btn btn-primary" (click)="editUser()">Modifier</button>
+            <button class="btn btn-danger"  (click)="deleteUser()">Supprimer</button>
+        </div>
+      </div>
+    </div>
+</div>
