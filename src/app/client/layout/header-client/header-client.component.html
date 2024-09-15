@@ -52,9 +52,9 @@
                       <span style="padding-left: 5px;">Aide</span>
                   </a>
                   <ul class="dropdown-menu">
-                      <li><a routerLink="/help/payment" class="dropdown-item">Payer une commande</a></li>
-                      <li><a routerLink="/help/track-order" class="dropdown-item">Suivre votre commande</a></li>
-                      <li><a routerLink="/help/return-order" class="dropdown-item">Retourner une commande</a></li>
+                      <li><a routerLink="/help/payerCommane" class="dropdown-item">Payer une commande</a></li>
+                      <li><a routerLink="/help/suivreCommande" class="dropdown-item">Suivre votre commande</a></li>
+                      <!--li><a routerLink="/help/return-order" class="dropdown-item">Retourner une commande</a></li-->
                   </ul>
               </div>
             </li>
@@ -74,7 +74,7 @@
             <li *ngIf="isAdmin"><a href="#" routerLink="/admin/produit"><i class="fas fa-cube"></i> Produits</a></li>
             <li *ngIf="isAdmin"><a href="#" routerLink="/admin/commande"><i class="fas fa-box"></i> Commandes</a></li>
             <li *ngIf="isAdmin"><a href="#" routerLink="/admin/payment"><i class="fas fa-credit-card"></i> Paiements</a></li>
-            <li *ngIf="isAdmin"><a href="#" routerLink="/admin/retour">Retours</a></li>
+            <!--li *ngIf="isAdmin"><a href="#" routerLink="/admin/retour">Retours</a></li-->
           </ul>
       </div>
   </div>

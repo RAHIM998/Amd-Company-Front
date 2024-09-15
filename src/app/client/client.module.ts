@@ -18,6 +18,8 @@ import { RecapCommandeComponent } from './cart/pages/recap-commande/recap-comman
 import { MesCommandesComponent } from './cart/pages/mes-commandes/mes-commandes.component';
 import { FormUserComponent } from './User/form-user/form-user.component';
 import { UserComponent } from './User/user/user.component';
+import { PayerCommandeComponent } from './aide/payer-commande/payer-commande.component';
+import { SuivreCommandeComponent } from './aide/suivre-commande/suivre-commande.component';
 
 @NgModule({
   declarations: [ 
@@ -33,6 +35,8 @@ import { UserComponent } from './User/user/user.component';
     MesCommandesComponent,
     UserComponent,
     FormUserComponent,
+    PayerCommandeComponent,
+    SuivreCommandeComponent,
   ],
   imports: [
     CommonModule,

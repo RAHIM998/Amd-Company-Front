@@ -10,6 +10,8 @@ import { RecapCommandeComponent } from './cart/pages/recap-commande/recap-comman
 import { MesCommandesComponent } from './cart/pages/mes-commandes/mes-commandes.component';
 import { UserComponent } from './User/user/user.component';
 import { FormUserComponent } from './User/form-user/form-user.component';
+import { PayerCommandeComponent } from './aide/payer-commande/payer-commande.component';
+import { SuivreCommandeComponent } from './aide/suivre-commande/suivre-commande.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path: 'panier', component: CartComponent},
   {path: 'recapCommande', component: RecapCommandeComponent },
   {path: 'mesCommande', component: MesCommandesComponent },
+  {path: 'help/payerCommane', component: PayerCommandeComponent },
+  {path: 'help/suivreCommande', component: SuivreCommandeComponent },
   {path: 'client/profile', component: UserComponent},
   {path: 'client/modifProfile/:id', component: FormUserComponent},
   {path: 'layout', loadChildren:() => import('./layout/layout.module').then(m => m.LayoutModule) },
