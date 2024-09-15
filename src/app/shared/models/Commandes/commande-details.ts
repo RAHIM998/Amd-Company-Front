@@ -23,6 +23,8 @@ export interface Produit {
     user: Users; 
     images?: ProduitImage[],
     showProducts?: boolean; 
+    month?: number;
+    total_sales?: number; 
   }
   
   export interface ProduitImage {

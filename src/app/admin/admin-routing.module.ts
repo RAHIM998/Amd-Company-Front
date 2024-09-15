@@ -12,7 +12,10 @@ const routes: Routes = [
   {path: 'update-category/:id', component: FormCategoryComponent},
   {path: 'details-category/:id', component: DetailsCategoryComponent},
   {path: 'produit', loadChildren:() => import('./produit/produit.module').then(m => m.ProduitModule)},
-  {path: 'commande', loadChildren:() => import('./commande/commande.module').then(m => m.CommandeModule)}
+  {path: 'commande', loadChildren:() => import('./commande/commande.module').then(m => m.CommandeModule)},
+  {path: 'payment', loadChildren:() => import('./payment/payment.module').then(m => m.PaymentModule)},
+  {path: 'user', loadChildren:() => import('./user/user.module').then(m => m.UserModule)},
+  {path: 'retour', loadChildren:() => import('./retours/retours.module').then(m => m.RetoursModule)}
 ];
 
 @NgModule({

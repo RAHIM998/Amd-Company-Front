@@ -39,6 +39,8 @@
 }
 
 
+  
+ 
 /*Button d'ajout */
 .custom-button {
     background: linear-gradient(90deg, #78909C, #90A4AE); 
@@ -47,10 +49,10 @@
     text-transform: uppercase;
     font-size: 0.75rem;
     padding: 0.5rem 1rem;
-    border-radius: 9999px;
+    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     transition: all 0.3s ease; 
-    border: none; 
+    border: none;
 }
 
 .custom-button:hover {
@@ -66,17 +68,15 @@
     outline: none;
 }
 
+.paie{
+    display: flex;
+}
 
-.product-image {
-    max-width: 80px;
-    max-height: 200px;
-    object-fit: cover;
-  }
-
-  h1{
+h1{
+    color:  #000000;
+    text-align: center;
     font-size: 24px;
     font-weight: bold;
-    color: #333333;
-    text-align: center;
     text-transform: uppercase;
+    
 }

@@ -26,6 +26,7 @@ export class FormUserComponent implements OnInit{
       image: ['', null],
     });
   }
+  
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.userService.getUser(this.id).subscribe(

@@ -6,11 +6,22 @@
 
       <div class="menu-container">
           <ul class="main-menu">
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle">
+                <i class="fas fa-list"></i> Catégories                
+              </a>
+              <ul class="dropdown-menu categories-submenu">
+                <li *ngFor="let category of categories">
+                  <a [routerLink]="['/category', category.id]">{{ category.libelle }}</a>
+                </li>
+              </ul>
+            </li>
+
               <li><a href="#" routerLink="">Catalogue</a></li>
               <li><a href="#" routerLink="/apropos">A propos de nous</a></li>
               <li><a href="#" routerLink="/contact">Nous contacter</a></li>
               <li>
-                  <input type="text" placeholder="Rechercher..." [(ngModel)]="searchQuery" (keyup.enter)="onSearch()">
+                <input type="text" placeholder="Rechercher..." [(ngModel)]="searchQuery" (keyup.enter)="onSearch()">
               </li>
 
               <li class="nav-item">
@@ -25,7 +36,7 @@
                     <ul class="dropdown-menu">
                       <li><a routerLink="/mesCommande" class="dropdown-item">Mes commandes</a></li>
                       <li><a class="dropdown-item" routerLink="/client/profile">Mon compte</a></li>
-                      <li><a (click)="logout()" class="dropdown-item">Déconnexion</a></li>
+                      <li><a class="dropdown-item" (click)="logout()">Déconnexion</a></li>
                     </ul>
                   </div>
                 </ng-container>
@@ -33,7 +44,7 @@
                   <a routerLink="/login" class="nav-link">Se connecter</a>
                 </ng-template>
               </li>
-              
+
              <li class="nav-item">
               <div class="dropdown">
                   <a class="dropdown-toggle" data-toggle="dropdown">
@@ -57,16 +68,13 @@
             </li>
           </ul>
           <ul class="category-menu">
-            <li *ngIf="isAdmin"><a href="#" routerLink="/admin/dashboard">Dashboard</a></li>
-            <li *ngIf="isAdmin"><a href="#" ><i class="fas fa-user"></i> Utilisateurs</a></li>
-            <li *ngIf="isAdmin"><a href="#" routerLink="/admin/categorie">Catégories</a></li>
-            <li *ngIf="isAdmin"><a href="#" routerLink="/admin/produit">Produits</a></li>
-            <li *ngIf="isAdmin"><a href="#" routerLink="/admin/commande">Commandes</a></li>
-            <li *ngIf="isAdmin"><a href="#" >Paiements</a></li>
-            <li *ngIf="isAdmin"><a href="#" routerLink="/contact">Retours</a></li>
-            <li *ngFor="let category of categories">
-                <a [routerLink]="['/category', category.id]">{{category.libelle}}</a>
-            </li>
+            <li *ngIf="isAdmin"><a href="#" routerLink="/admin/dashboard"> <i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li *ngIf="isAdmin"><a href="#" routerLink="/admin/user"><i class="fas fa-user"></i> Utilisateurs</a></li>
+            <li *ngIf="isAdmin"><a href="#" routerLink="/admin/categorie"><i class="fas fa-list"></i> Catégories</a></li>
+            <li *ngIf="isAdmin"><a href="#" routerLink="/admin/produit"><i class="fas fa-cube"></i> Produits</a></li>
+            <li *ngIf="isAdmin"><a href="#" routerLink="/admin/commande"><i class="fas fa-box"></i> Commandes</a></li>
+            <li *ngIf="isAdmin"><a href="#" routerLink="/admin/payment"><i class="fas fa-credit-card"></i> Paiements</a></li>
+            <li *ngIf="isAdmin"><a href="#" routerLink="/admin/retour">Retours</a></li>
           </ul>
       </div>
   </div>

@@ -1,1 +1,58 @@
-<p>dashboard works!</p>
+<!-- accueil.component.html -->
+<div class="container">
+    <h1>BIENVENUE CHEZ AMD COMPANY</h1>
+  
+    <!-- Rectangles pour les statistiques -->
+    <div class="stats-container">
+      <div class="stats-card" (click)="showOrders('enCours')">
+        <h3>Commandes en cours</h3>
+        <p>{{ NbCommandeEnCours }}</p>
+      </div>
+      <div class="stats-card" (click)="showOrders('paid')">
+        <h3>Commandes Validées</h3>
+        <p>{{ NbCommandePaid }}</p>
+      </div>
+      <div class="stats-card" (click)="showOrders('cancelled')">
+        <h3>Commandes Annulées</h3>
+        <p>{{ NbCommandeAnnule }}</p>
+      </div>
+      <div class="stats-card" (click)="showOrders('caJournalier')">
+        <h3>Recettes Journalières</h3>
+        <p style="font-size: 20px;">{{ CAjournalier }} FCFA</p>
+      </div>
+      
+    </div>
+  
+    <!-- Tableau pour afficher les détails des commandes -->
+    <div *ngIf="selectedOrders.length > 0">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Client</th>
+            <th>Date de Commande</th>
+            <th>Montant</th>
+            <th>Adresse</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let commande of selectedOrders">
+            <td>{{ commande.id }}</td>
+            <td>{{ commande.user?.name  || 'N/A'}}</td>
+            <td>{{ commande.dateCommande | date: 'dd/MM/yyyy' }}</td>
+            <td>{{ commande.montant }} FCFA</td>
+            <td>{{ commande.adresseLivraison }}</td>
+            <td>{{ commande.status }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <br><br>
+
+  <div class="chart-container chart">
+    <h1 style="text-align: center;">Statistiques des ventes de l'année en cours</h1>
+    <canvas  id="MyChart" >{{ chart }}</canvas>
+</div><br><br><br>

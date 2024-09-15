@@ -1,0 +1,38 @@
+<div class="paie">
+    <h1>Paiements en attente de la journée</h1>
+
+    <div class="ca-journalier">
+      <h2>Chiffre d'affaires des paiements en attente : <strong>{{ montantTotal }} FCFA</strong></h2>
+    </div>
+
+    <div class="content table-responsive table-full-width">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="text-center">Id</th>
+            <th class="text-center">Numéro de commande</th>
+            <th class="text-center">Montant de la commande</th>
+            <th class="text-center">Date de paiement</th>
+            <th class="text-center">Méthode de paiement</th>
+            <th class="text-center">Statut de paiement</th>
+            <th class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let paie of tabPaiements">
+            <td class="text-center">{{ paie.id }}</td>
+            <td class="text-center">{{ paie.commande?.numeroCommande }}</td>
+            <td class="text-center">{{ paie.montant }}</td>
+            <td class="text-center">Pas encore payé</td>
+            <td class="text-center">{{ paie.method }}</td>
+            <td class="text-center">{{ paie.status ? 'payé' : 'En attente'}}</td>
+            <td class="td-actions text-center">
+              <a rel="tooltip" title="View Details" class="btn btn-info btn-simple btn-xs" routerLink="/admin/payment/details/{{paie.id}}">
+                <i class="fa fa-user"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

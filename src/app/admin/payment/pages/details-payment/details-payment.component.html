@@ -1,0 +1,15 @@
+<div class="user-details container mt-5">
+    <div *ngIf="error" class="error">{{ error }}</div>
+    <div *ngIf="paiement">
+        <h1>Détails du paiement</h1>
+        <div class="user-card mt-5">
+            <div class="user-card-content">
+                <p><strong>Numéro de commande :</strong> {{paiement.commande?.numeroCommande}}</p>
+                <p><strong>Date de paiement :</strong> {{paiement.datePaiement}}</p>
+                <p><strong>Montant total :</strong> {{paiement.montant}}</p>
+                <p><strong>Méthode de paiement :</strong> {{paiement.method}}</p>
+                <p><strong>Statut de paiement :</strong> {{ paiement.status ? 'payé' : 'En attente'}}</p>
+            </div>
+        </div>
+    </div>
+</div>

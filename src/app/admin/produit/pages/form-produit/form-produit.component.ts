@@ -121,7 +121,6 @@ export class FormProduitComponent implements OnInit {
               timer: 2000,
               showConfirmButton: false
             });
-            console.log('Produit modifié avec succès', response);
             this.router.navigate(['/admin/produit']);
           },
           error => {

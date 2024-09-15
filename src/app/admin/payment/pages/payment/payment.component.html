@@ -1,0 +1,56 @@
+
+<div>
+    <h1>Gestion des paiements</h1>
+
+
+    <div class="paie">
+        <button class="custom-button" type="button" routerLink="/admin/payment/paiementJours">
+            Paiement du jour
+        </button>
+
+        <button class="custom-button" type="button" style="margin-left: 20px; " 
+        routerLink="/admin/payment/paiementEnAttente">Paiement en attente</button>
+
+        <h1 *ngIf="showTotal">Paiements du jour</h1>
+    </div><br>
+      
+    <div class="content table-responsive table-full-width">
+        <table class="table">
+        <thead>
+            <tr>
+            <th class="text-center">Id</th>
+            <th class="text-center">Numéro de commande</th>
+            <th class="text-center">Montant de la commande</th>
+            <th class="text-center">Date de paiement</th>
+            <th class="text-center">Méthode de paiement</th>
+            <th class="text-center">Statut de paiement</th>
+            <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let paie of TabPayment">
+            <td class="text-center">{{ paie.id }}</td>
+            <td class="text-center">{{ paie.commande?.numeroCommande }}</td>
+            <td class="text-center">{{ paie.montant }}</td>
+            <td class="text-center">{{ paie.datePaiement }}</td>
+            <td class="text-center">{{ paie.method }}</td>
+            <td class="text-center">{{ paie.status ? 'payé' : 'En attente'}}</td>
+            <td class="td-actions text-center">
+                <a rel="tooltip" title="View Details" class="btn btn-info btn-simple btn-xs" routerLink="/admin/payment/details/{{paie.id}}">
+                    <i class="fa fa-user"></i>
+                </a>
+            </td>
+            
+            </tr>
+        </tbody>
+        <tfoot *ngIf="showTotal">
+            <tr>
+            <td colspan="2" class="text-right"><strong>Montant Total :</strong></td>
+            <td class="text-center"><strong>{{ getTotalAmount() }}</strong></td>
+            <td colspan="4"></td>
+            </tr>
+        </tfoot>
+        </table>
+      </div>
+  
+</div>

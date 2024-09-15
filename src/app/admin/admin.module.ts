@@ -10,6 +10,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailsCategoryComponent } from './categorie/pages/details-category/details-category.component';
 import { ProduitModule } from './produit/produit.module';
 import { CommandeModule } from './commande/commande.module';
+import { PaymentModule } from './payment/payment.module';
+import { UserModule } from './user/user.module';
+import { RetoursModule } from './retours/retours.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { CommandeModule } from './commande/commande.module';
     FormsModule,
     ReactiveFormsModule,
     ProduitModule,
-    CommandeModule
+    CommandeModule,
+    PaymentModule,
+    UserModule,
+    RetoursModule
   ],
 })
 export class AdminModule { }

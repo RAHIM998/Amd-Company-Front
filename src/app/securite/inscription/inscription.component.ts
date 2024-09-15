@@ -29,8 +29,8 @@ export class InscriptionComponent {
       telephone: ['', [Validators.required, Validators.pattern(/^(\+\d{1,4})?\d+$/)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(4)]],
-      role: ['user'], // Valeur par défaut ou selon ta logique
-      image: [null] // Champ pour l'image
+      role: ['user'], 
+      image: [null] 
     });
   }
 
